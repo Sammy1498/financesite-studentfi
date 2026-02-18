@@ -2,19 +2,22 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { Expense, BudgetAdvice } from "../types";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
-
-export const getBudgetAdvice = async (expenses: Expense[]): Promise<BudgetAdvice> => {
-  if (!process.env.API_KEY) {
+const getAI = () => {
+  const apiKey = process.env.API_KEY || process.env.GEMINI_API_KEY;
+  if (!apiKey) {
     throw new Error("API Key is missing");
   }
+  return new GoogleGenAI({ apiKey });
+};
 
+export const getBudgetAdvice = async (expenses: Expense[]): Promise<BudgetAdvice> => {
   const prompt = `Analyze these student expenses and provide helpful, friendly, lo-fi budgeting advice.
   Expenses: ${JSON.stringify(expenses)}
   
   Keep the tone "chill", "sketched", and "student-friendly". No corporate jargon.`;
 
   try {
+    const ai = getAI();
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
       contents: prompt,
