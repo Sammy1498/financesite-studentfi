@@ -1,0 +1,84 @@
+/* Lo-fi Design System */
+
+:root {
+    --primary: #30abe8;
+}
+
+/* Material Symbols configuration - Simplified for maximum compatibility */
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined' !important;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Sketchy UI Utilities */
+.sketch-border {
+    border: 2px solid #111c21;
+    box-shadow: 4px 4px 0px 0px #111c21;
+}
+
+.dark .sketch-border {
+    border: 2px solid #30abe8;
+    box-shadow: 4px 4px 0px 0px #30abe8;
+}
+
+.sketch-border-sm {
+    border: 2px solid #111c21;
+    box-shadow: 2px 2px 0px 0px #111c21;
+}
+
+/* Animations */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Transition for theme switching */
+.transition-colors {
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.img-cover {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+}
+
+/* Organic, hand-cut mask for photos */
+.sketch-mask {
+    clip-path: polygon(2% 3%, 95% 1%, 98% 5%, 99% 92%, 96% 98%, 5% 99%, 1% 95%, 2% 8%);
+}
+
+.sketch-mask-alt {
+    clip-path: polygon(1% 5%, 98% 2%, 96% 95%, 99% 98%, 4% 97%, 2% 93%, 1% 10%);
+}
