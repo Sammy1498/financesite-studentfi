@@ -1,6 +1,7 @@
 /* Lo-fi Design System */
 
 @import "tailwindcss";
+@config "./tailwind.config.js";
 
 :root {
     --primary: #30abe8;
