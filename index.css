@@ -1,10 +1,16 @@
 /* Lo-fi Design System */
 
 @import "tailwindcss";
-@config "./tailwind.config.js";
 
-:root {
-    --primary: #30abe8;
+@theme {
+    --font-display: "Plus Jakarta Sans", sans-serif;
+    --color-primary: #30abe8;
+    --color-background-light: #fbfcfd;
+    --color-background-dark: #111c21;
+
+    --radius-default: 1.5rem;
+    --radius-lg: 2.5rem;
+    --radius-xl: 4rem;
 }
 
 /* Material Symbols configuration - Simplified for maximum compatibility */
