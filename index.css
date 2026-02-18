@@ -1,8 +1,6 @@
 /* Lo-fi Design System */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
     --primary: #30abe8;
